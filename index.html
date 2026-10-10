@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d0b1a">
+<title>Game Hub · Գեյմինգ ակումբ Երևանում</title>
+<meta name="description" content="Game Hub — շուրջօրյա գեյմինգ ակումբ Երևանում։ Standart, Comfort և VIP համակարգիչներ, 24 խաղ, գիշերային փաթեթ։">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Noto+Sans+Armenian:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#0d0b1a; --bg2:#13102a; --surface:#1a1636; --surface2:#221d45; --line:#2f2a58;
+  --fg:#f0edfb; --muted:#a29ec4; --accent:#b794ff; --accent2:#7c4dff; --accent-ink:#1b1233; --ok:#5fd8a0;
+  --font-display:"Chakra Petch","Noto Sans Armenian",system-ui,sans-serif;
+  --font-body:"Noto Sans Armenian",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:16px; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1rem/1.7 var(--font-body);overflow-x:clip;
+  padding-bottom:env(safe-area-inset-bottom,0)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+   radial-gradient(40rem 26rem at 95% -5%,rgba(183,148,255,.20),transparent 70%),
+   radial-gradient(36rem 24rem at -5% 20%,rgba(124,77,255,.20),transparent 70%),
+   radial-gradient(30rem 20rem at 60% 105%,rgba(124,77,255,.14),transparent 70%)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(ellipse at 50% 0,#000 0,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 0,#000 0,transparent 70%)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:62rem;margin-inline:auto;padding-inline:1.25rem}
+
+/* NAV */
+header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:rgba(13,11,26,.72);border-bottom:1px solid rgba(47,42,88,.6);padding-top:env(safe-area-inset-top,0)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.75rem}
+.logo{font-family:var(--font-display);font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.logo i{width:1.5rem;height:1.5rem;border-radius:7px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;
+  box-shadow:0 0 18px rgba(183,148,255,.55)}
+.logo i::after{content:"";width:.5rem;height:.5rem;border-radius:2px;background:var(--accent-ink);transform:rotate(45deg)}
+nav ul{display:flex;gap:.25rem;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:.45rem .85rem;border-radius:999px;text-decoration:none;color:var(--muted);font-size:.92rem;transition:.2s}
+nav a:hover{color:var(--fg);background:var(--surface)}
+
+/* HERO */
+.hero{padding-block:clamp(3rem,9vw,6rem) clamp(2rem,5vw,3rem);display:grid;gap:2.5rem}
+.status{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem .9rem;border:1px solid var(--line);border-radius:999px;
+  background:rgba(26,22,54,.7);color:var(--muted);font-size:.9rem;justify-self:start}
+.dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(95,216,160,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 .6rem rgba(95,216,160,0)}100%{box-shadow:0 0 0 0 rgba(95,216,160,0)}}
+h1{font-family:var(--font-display);font-weight:700;text-transform:uppercase;margin:1.1rem 0 0;line-height:.88;letter-spacing:-.015em;
+  font-size:clamp(4.2rem,19vw,9.5rem)}
+h1 span{color:transparent;-webkit-text-stroke:2px var(--accent);filter:drop-shadow(0 0 22px rgba(183,148,255,.45))}
+.lede{font-size:clamp(1.05rem,2.6vw,1.25rem);color:var(--muted);max-width:32rem;margin:1.5rem 0 0}
+.cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.75rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.6rem;border-radius:12px;text-decoration:none;font-weight:700;
+  background:linear-gradient(135deg,var(--accent),#9a6bff);color:var(--accent-ink);box-shadow:0 8px 28px -8px rgba(183,148,255,.7);
+  transition:transform .2s,box-shadow .2s;border:0;font-family:inherit;font-size:1rem;cursor:pointer}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px -8px rgba(183,148,255,.9)}
+.btn.ghost{background:transparent;color:var(--fg);border:1.5px solid var(--accent);box-shadow:none}
+.btn.ghost:hover{background:rgba(183,148,255,.12)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+.stat{background:linear-gradient(160deg,var(--surface),var(--bg2));border:1px solid var(--line);border-radius:var(--r);padding:1rem 1.1rem}
+.stat b{display:block;font-family:var(--font-display);font-size:clamp(1.5rem,5vw,2.2rem);line-height:1.1;color:var(--accent)}
+.stat span{color:var(--muted);font-size:.88rem}
+
+/* SECTIONS */
+section{padding-block:clamp(2.5rem,7vw,4.5rem) 0}
+.eyebrow{font-family:var(--font-display);color:var(--accent);letter-spacing:.2em;text-transform:uppercase;font-size:.8rem;font-weight:600}
+h2{font-family:var(--font-display);font-size:clamp(1.7rem,6vw,2.5rem);margin:.4rem 0 .5rem;line-height:1.15;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 1.75rem}
+
+/* TABS */
+.tabs{display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:.3rem;padding:.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:14px;margin-bottom:1.75rem;width:100%;max-width:26rem}
+.tab{border:0;background:none;color:var(--muted);font:600 .98rem var(--font-display);padding:.75rem .5rem;min-height:2.9rem;border-radius:10px;cursor:pointer;transition:.2s;position:relative}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected=true]{background:linear-gradient(135deg,var(--accent),#9a6bff);color:var(--accent-ink);box-shadow:0 6px 18px -6px rgba(183,148,255,.8)}
+.panel{animation:fade .35s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+
+/* PRICE CARDS */
+.band{display:flex;align-items:center;gap:.8rem;margin:0 0 .9rem;font-family:var(--font-display);font-weight:600;font-size:1.05rem}
+.band small{font-family:var(--font-body);font-weight:400;color:var(--muted);font-size:.85rem}
+.band::after{content:"";flex:1;height:1px;background:var(--line)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:2rem}
+.card{position:relative;background:linear-gradient(165deg,var(--surface),var(--bg2));border:1px solid var(--line);border-radius:var(--r);
+  padding:1.2rem 1.1rem;transition:transform .25s,border-color .25s,box-shadow .25s;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(183,148,255,.55);box-shadow:0 14px 34px -16px rgba(124,77,255,.8)}
+.card:hover::before{opacity:1}
+.card .h{color:var(--muted);font-size:.92rem}
+.card .p{font-family:var(--font-display);font-weight:700;font-size:clamp(1.6rem,5.2vw,2.2rem);line-height:1.15;margin-top:.3rem;font-variant-numeric:tabular-nums}
+.card .p small{font-family:var(--font-body);font-weight:400;font-size:.8rem;color:var(--muted);margin-left:.3rem}
+.card .per{margin-top:.6rem;font-size:.8rem;color:var(--ok)}
+.night{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap;padding:1.4rem 1.5rem;border-radius:20px;
+  background:linear-gradient(120deg,rgba(124,77,255,.35),rgba(26,22,54,.9) 60%);border:1px solid rgba(183,148,255,.4);position:relative;overflow:hidden}
+.night::after{content:"☾";position:absolute;right:1.2rem;top:-1.2rem;font-size:8rem;color:rgba(183,148,255,.1);line-height:1}
+.night .tag{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:.75rem;padding:.2rem .65rem;border-radius:999px;margin-bottom:.5rem}
+.night h3{margin:0;font-family:var(--font-display);font-size:1.2rem}
+.night p{margin:.2rem 0 0;color:var(--muted);font-size:.92rem}
+.night .p{font-family:var(--font-display);font-weight:700;font-size:clamp(2rem,7vw,2.8rem);position:relative;z-index:1}
+.night .p small{font-family:var(--font-body);font-size:.85rem;font-weight:400;color:var(--muted);margin-left:.3rem}
+
+/* GAMES */
+.search{width:100%;max-width:22rem;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--fg);padding:.8rem 1rem;font:inherit;margin-bottom:1.25rem}
+.search::placeholder{color:var(--muted)}
+.search:focus{outline:2px solid var(--accent);border-color:transparent}
+.games{display:flex;flex-wrap:wrap;gap:.55rem;list-style:none;padding:0;margin:0}
+.games li{padding:.5rem 1rem;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.95rem;transition:.2s;cursor:default}
+.games li:hover{border-color:var(--accent);background:var(--surface2);transform:translateY(-2px)}
+.empty{color:var(--muted);margin-top:1rem}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.c{background:linear-gradient(165deg,var(--surface),var(--bg2));border:1px solid var(--line);border-radius:var(--r);padding:1.3rem 1.2rem;min-width:0}
+.c .ic{width:2.4rem;height:2.4rem;border-radius:11px;background:rgba(183,148,255,.14);display:grid;place-items:center;font-size:1.15rem;margin-bottom:.8rem}
+.c dt{color:var(--muted);font-size:.88rem}
+.c dd{margin:.15rem 0 0;font-weight:600;font-size:1.05rem;overflow-wrap:anywhere}
+.c small{display:block;color:var(--muted);font-weight:400;font-size:.88rem;margin-top:.15rem}
+.c a.lnk,.copy{color:var(--accent);text-decoration:none;font:inherit;font-size:.9rem;font-weight:600;background:none;border:0;padding:0;cursor:pointer;margin-top:.5rem;display:inline-block}
+.c a.lnk:hover,.copy:hover{text-decoration:underline}
+.c .tel{text-decoration:none;font-family:var(--font-display);font-size:1.35rem;letter-spacing:.02em}
+
+footer{margin-top:4.5rem;padding-block:2rem calc(2rem + 4.5rem);border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;text-align:center}
+
+/* floating call (mobile) */
+.fab{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0));z-index:30;display:none;align-items:center;gap:.5rem;
+  padding:.85rem 1.2rem;border-radius:999px;background:linear-gradient(135deg,var(--accent),#9a6bff);color:var(--accent-ink);font-weight:700;text-decoration:none;
+  box-shadow:0 10px 30px -6px rgba(124,77,255,.9)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:44rem){
+  .cards,.contact{grid-template-columns:1fr}
+  .cards{gap:.6rem}
+  .card{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.1rem}
+  .card .p{margin:0;font-size:1.6rem}
+  .card .per{display:none}
+  .fab{display:inline-flex}
+  nav a{padding:.4rem .6rem;font-size:.88rem}
+  .tabs{max-width:none}
+}
+@media (max-width:24rem){.stats{grid-template-columns:1fr}.logo span{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><i></i><span>Game Hub</span></a>
+    <nav aria-label="Հիմնական">
+      <ul>
+        <li><a href="#prices">Սակագներ</a></li>
+        <li><a href="#games">Խաղեր</a></li>
+        <li><a href="#contact">Կապ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <div class="status"><span class="dot"></span> Բաց է շուրջօրյա · Երևան</div>
+      <h1>Game<br><span>Hub</span></h1>
+      <p class="lede">Գեյմինգ ակումբ Երևանում՝ հզոր համակարգիչներ, բոլոր սիրված խաղերը և գիշերային փաթեթ՝ առանց փակվելու։</p>
+      <div class="cta">
+        <a class="btn" href="tel:+37499702002">📞 Զանգահարել</a>
+        <a class="btn ghost" href="#prices">Տեսնել սակագները</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>24/7</b><span>Բաց ենք շուրջօրյա</span></div>
+      <div class="stat"><b>24</b><span>Խաղ արդեն տեղադրված</span></div>
+      <div class="stat"><b>3</b><span>Տեսակի համակարգիչ</span></div>
+    </div>
+  </div>
+
+  <section id="prices" class="rv">
+    <div class="eyebrow">Prices</div>
+    <h2>Սակագներ</h2>
+    <p class="sub">Ընտրեք համակարգչի տեսակը։ Գները՝ դրամով։</p>
+
+    <div class="tabs" role="tablist" aria-label="Համակարգչի տեսակ">
+      <button class="tab" role="tab" id="tab-standart" aria-controls="panel" aria-selected="true" type="button" data-k="standart">Standart</button>
+      <button class="tab" role="tab" id="tab-comfort" aria-controls="panel" aria-selected="false" type="button" data-k="comfort" tabindex="-1">Comfort</button>
+      <button class="tab" role="tab" id="tab-vip" aria-controls="panel" aria-selected="false" type="button" data-k="vip" tabindex="-1">VIP PC</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel" aria-labelledby="tab-standart"></div>
+  </section>
+
+  <section id="games" class="rv">
+    <div class="eyebrow">Games</div>
+    <h2>Խաղեր</h2>
+    <p class="sub">Բոլորը արդեն տեղադրված են բոլոր տեսակի համակարգիչների վրա։</p>
+    <input class="search" id="search" type="search" placeholder="Փնտրել խաղ…" aria-label="Փնտրել խաղ" autocomplete="off">
+    <ul class="games" id="games-list">
+      <li>Dota 2</li><li>Counter-Strike 2</li><li>Valorant</li><li>League of Legends</li>
+      <li>Fortnite</li><li>Roblox</li><li>Left 4 Dead 2</li><li>Medal of Honor</li>
+      <li>Warzone / Call of Duty</li><li>Apex Legends</li><li>Rocket League</li><li>Warface</li>
+      <li>PUBG</li><li>World of Tanks</li><li>Marvel Rivals</li><li>Euro Truck Simulator</li>
+      <li>Tarkov</li><li>Overwatch</li><li>Deadlock</li><li>Battlefield 6</li>
+      <li>Rainbow Six Siege</li><li>Minecraft</li><li>Genshin Impact</li><li>War Thunder</li>
+    </ul>
+    <p class="empty" id="empty" hidden>Նման խաղ չգտնվեց։ Հարցրեք մեզ՝ գուցե կարող ենք տեղադրել։</p>
+  </section>
+
+  <section id="contact" class="rv">
+    <div class="eyebrow">Contact</div>
+    <h2>Կապ</h2>
+    <p class="sub">Ակումբը չի փակվում։</p>
+    <dl class="contact" style="margin:0">
+      <div class="c">
+        <div class="ic">📍</div>
+        <dt>Հասցե</dt>
+        <dd>5A King Pap St, Yerevan 0010</dd>
+        <a class="lnk" href="https://www.google.com/maps/search/?api=1&query=5GH6%2BJ2+Yerevan" target="_blank" rel="noopener">Բացել քարտեզում →</a>
+      </div>
+      <div class="c">
+        <div class="ic">📞</div>
+        <dt>Հեռախոս</dt>
+        <dd><a class="tel" href="tel:+37499702002">099 702002</a></dd>
+        <button class="copy" id="copy-phone" type="button">Պատճենել համարը</button>
+      </div>
+      <div class="c">
+        <div class="ic">🕒</div>
+        <dt>Ժամեր</dt>
+        <dd>Շուրջօրյա<small>շաբաթվա բոլոր օրերին</small></dd>
+      </div>
+    </dl>
+  </section>
+</main>
+
+<footer>© Game Hub · Երևան</footer>
+<a class="fab" href="tel:+37499702002" aria-label="Զանգահարել">📞 099 702002</a>
+
+<script>
+(function () {
+  var D = {
+    standart: { day:[500,1200,1800], eve:[700,1800,2600], night:3000 },
+    comfort:  { day:[700,1700,2700], eve:[900,2000,3300], night:4000 },
+    vip:      { day:[900,2000,3500], eve:[1100,2700,4400], night:5000 }
+  };
+  var H = [1,3,5];
+  function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'\u00a0'); }
+  function band(title, sub, arr){
+    var h = '<div class="band">'+title+' <small>'+sub+'</small></div><div class="cards">';
+    arr.forEach(function(p,i){
+      var per = H[i]>1 ? '≈ '+fmt(Math.round(p/H[i]))+' դրամ/ժամ' : '&nbsp;';
+      h += '<div class="card"><div class="h">'+H[i]+' ժամ</div><div><div class="p">'+fmt(p)+'<small>դրամ</small></div>'+(H[i]>1?'<div class="per">'+per+'</div>':'<div class="per" style="color:var(--muted)">հիմնական գին</div>')+'</div></div>';
+    });
+    return h+'</div>';
+  }
+  var panel = document.getElementById('panel');
+  function render(k){
+    var d = D[k];
+    panel.innerHTML =
+      band('04:00 – 16:00','Ցերեկային',d.day) +
+      band('16:00 – 04:00','Երեկոյան և գիշերային',d.eve) +
+      '<div class="night"><div><span class="tag">Լավագույն գին</span><h3>Գիշերային փաթեթ</h3><p>23:00 – 09:00 · 10 ժամ</p></div>' +
+      '<div class="p">'+fmt(d.night)+'<small>դրամ</small></div></div>';
+    panel.style.animation='none'; panel.offsetHeight; panel.style.animation='';
+  }
+
+  var tabs = [].slice.call(document.querySelectorAll('.tab'));
+  function select(tab, focus){
+    tabs.forEach(function(t){
+      var on = t===tab;
+      t.setAttribute('aria-selected', on?'true':'false');
+      t.tabIndex = on?0:-1;
+    });
+    panel.setAttribute('aria-labelledby', tab.id);
+    render(tab.dataset.k);
+    if(focus) tab.focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click', function(){ select(t); });
+    t.addEventListener('keydown', function(e){
+      var n = e.key==='ArrowRight'?1 : e.key==='ArrowLeft'?-1 : 0;
+      if(n){ e.preventDefault(); select(tabs[(i+n+tabs.length)%tabs.length], true); }
+    });
+  });
+  render('standart');
+
+  var q = document.getElementById('search'), items = [].slice.call(document.querySelectorAll('#games-list li')), empty = document.getElementById('empty');
+  q.addEventListener('input', function(){
+    var v = q.value.trim().toLowerCase(), c = 0;
+    items.forEach(function(li){
+      var ok = li.textContent.toLowerCase().indexOf(v) > -1;
+      li.hidden = !ok; if(ok) c++;
+    });
+    empty.hidden = c>0;
+  });
+
+  var btn = document.getElementById('copy-phone');
+  btn.addEventListener('click', function(){
+    var done = function(){ btn.textContent='Պատճենվեց ✓'; setTimeout(function(){ btn.textContent='Պատճենել համարը'; },1800); };
+    try { navigator.clipboard.writeText('099 702002').then(done, function(){}); } catch(e){}
+  });
+
+  var els = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.08});
+    els.forEach(function(el){ io.observe(el); });
+  } else els.forEach(function(el){ el.classList.add('in'); });
+})();
+</script>
+</body>
+</html>
